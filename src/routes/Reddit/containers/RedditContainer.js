@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
+
 import Reddit from '../components/Reddit'
 
 import {
   selectSubreddit,
   invalidateSubreddit,
   fetchPostsIfNeeded
-} from '../modules/reddit'
+} from '../modules/Actions'
 
 const mapDispatchToProps = {
   selectSubreddit,
@@ -15,9 +16,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => ({
   selectedSubreddit: state.reddit.selectedSubreddit,
-  posts: state.reddit.posts,
-  isFetching: state.reddit.isFetching,
-  lastUpdated: state.reddit.lastUpdated
+  postsBySubreddit: state.reddit.postsBySubreddit
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Reddit)

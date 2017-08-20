@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './Picker.scss'
 
 class Picker extends Component {
-  render() {
+  render () {
     const { value, onChange, options } = this.props
 
     return (
